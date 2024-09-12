@@ -13,11 +13,9 @@ export default function Home() {
     const fadedNode = document.querySelector(`.${styles.fadedNode}`) as HTMLElement;
 
     function setInitialPositions() {
-      const containerHeight = window.innerHeight;
-      const linePosition = containerHeight / 2;
-      
-      // GPU 가속이 가능한 transform 속성으로 전환
-      line.style.transform = `translateY(${linePosition}px)`;
+      // 뷰포트 높이의 40%에 위치하도록 변경
+      const linePosition = '40vh';
+      line.style.transform = `translateY(${linePosition})`;
     }
 
     setInitialPositions();
@@ -30,7 +28,6 @@ export default function Home() {
 
     const lastExpandDelay = (expands.length - 1) * 1;
 
-    // 애니메이션 최적화: transform과 opacity를 사용하여 GPU 가속 활용
     setTimeout(() => {
       verticalNode.style.animation = `${styles.foldUp} 0.3s forwards`;
     }, (lastExpandDelay + 1.5 + 0.3) * 1000);
@@ -54,7 +51,6 @@ export default function Home() {
     };
   }, []);
 
-  // 화면 클릭 시 /main으로 이동
   const handleClick = () => {
     router.push('/main');
   };

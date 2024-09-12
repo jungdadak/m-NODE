@@ -3,7 +3,7 @@
   justify-content: flex-start;
   align-items: center;
   height: 100vh;
-  background-color: white; /* 배경색을 흰색으로 변경 */
+  background-color: white;
   font-family: Arial, sans-serif;
   overflow: hidden;
   position: relative;
@@ -19,7 +19,7 @@
   font-size: 17vw;
   font-weight: bold;
   margin-left: 10vw;
-  color: black; /* 글자색을 검은색으로 변경 */
+  color: black;
 }
 
 .letter {
@@ -28,7 +28,7 @@
   align-items: center;
   font-weight: bold;
   font-size: 17vw;
-  color: black; /* 글자색을 검은색으로 변경 */
+  color: black;
 }
 
 .expand {
@@ -42,7 +42,7 @@
   font-size: 17vw;
   font-weight: normal;
   margin-left: 1vw;
-  color: black; /* 글자색을 검은색으로 변경 */
+  color: black;
 }
 
 .nodeGroup {
@@ -61,7 +61,7 @@
   font-weight: bold;
   opacity: 0; 
   display: block;
-  color: black; /* 글자색을 검은색으로 변경 */
+  color: black;
   white-space: nowrap;
   text-align: center;
   position: relative;
@@ -74,24 +74,23 @@
   font-weight: bold;
   opacity: 0; 
   display: block;
-  color: rgba(0, 0, 0, 0.3); /* 글자색을 투명한 검은색으로 변경 */
+  color: rgba(0, 0, 0, 0.3);
   white-space: nowrap;
   text-align: center;
   position: relative;
   left: -21vw;
   top: -40px;
   transform: scaleY(-1) skewX(-30deg);
-  transition: opacity 0.5s ease-in-out; /* transition 시간 조정 */
+  transition: opacity 0.5s ease-in-out;
 }
 
 .line {
   width: 80vw;
   height: 0.5vw;
-  background-color: blue; /* 선 색을 파란색으로 변경 */
+  background-color: blue;
   opacity: 0;
   margin: 0 auto;
 }
-
 
 @keyframes expandIn {
   0% {
@@ -136,5 +135,56 @@
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+/* 모바일 디바이스를 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+  .verticalNode {
+    font-size: 12vw;
+    margin-left: 5vw;
+  }
+
+  .letter {
+    font-size: 12vw;
+  }
+
+  .expand {
+    font-size: 12vw;
+  }
+
+  .nodeGroup {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .horizontalNode, .fadedNode {
+    font-size: 10vw;
+    left: 0;
+  }
+
+  .horizontalNode {
+    top: 15px;
+  }
+
+  .fadedNode {
+    top: -20px;
+  }
+
+  .line {
+    width: 90vw;
+  }
+
+  @keyframes drawLine {
+    0% {
+      opacity: 1;
+      width: 0;
+      transform: translateX(90vw);
+    }
+    100% {
+      opacity: 1;
+      width: 90vw;
+      transform: translateX(0);
+    }
   }
 }
