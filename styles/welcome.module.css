@@ -60,7 +60,7 @@
 .horizontalNode {
   font-size: 13vw;
   font-weight: bold;
-  opacity: 0; 
+  opacity: 0;
   display: block;
   color: black;
   white-space: nowrap;
@@ -83,7 +83,7 @@
 .fadedNode {
   font-size: 13vw;
   font-weight: bold;
-  opacity: 0; 
+  opacity: 0;
   display: block;
   color: rgba(0, 0, 0, 0.3);
   white-space: nowrap;
@@ -142,19 +142,9 @@
   }
 }
 
-/* 모바일 디바이스를 위한 미디어 쿼리 */
 @media (max-width: 768px) {
   .verticalNode {
-    font-size: 12vw;
     margin-left: 5vw;
-  }
-
-  .letter {
-    font-size: 12vw;
-  }
-
-  .expand {
-    font-size: 12vw;
   }
 
   .nodeGroup {
@@ -162,16 +152,8 @@
     width: 60vw;
   }
 
-  .horizontalNode, .fadedNode {
-    font-size: 10vw;
-  }
-
-  .horizontalNode {
-    margin-bottom: -0.4vw;
-  }
-
   .fadedNode {
-    top: calc(100% + 0.4vw);
-    left: 0.6vw;
+    top: calc(50% + 3vw);
+    left: 2vw;
   }
 }
